@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Android Demo</string>
+
+    <string name="hello_world">用来测试AsyncTask中跑大的for循环</string>
+    <string name="welcome">欢迎来到新界面测试</string>
+    <string name="action_settings">Settings</string>
+    <string name="title_activity_second">SecondActivity</string>
+    <string name="title_activity_looper">LooperActivity</string>
+    <string name="title_activity_net_work">NetWorkActivity</string>
+    <string name="title_activity_async_task">AsyncTaskActivity</string>
+    <string name="title_activity_for_async_task">ForAsyncTaskActivity</string>
+    <string name="title_activity_welcome">WelcomeActivity</string>
+</resources>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="thoughtworks.academy.myandroiddemo" >
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/Theme.AppCompat.NoActionBar" >
+        <activity
+            android:name=".ForAsyncTaskActivity"
+            android:label="@string/app_name" >
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/title_activity_second" >
+        </activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="@string/title_activity_looper" >
+        </activity>
+        <activity
+            android:name=".LooperActivity"
+            android:label="@string/title_activity_net_work" >
+        </activity>
+        <activity
+            android:name=".NetworkActivity"
+            android:label="@string/title_activity_async_task" >
+        </activity>
+        <activity
+            android:name=".AsyncTaskActivity"
+            android:label="@string/title_activity_for_async_task" >
+        </activity>
+        <activity
+            android:name=".WelcomeActivity"
+            android:label="@string/title_activity_welcome" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
