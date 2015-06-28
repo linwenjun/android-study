@@ -21,7 +21,15 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/login_button"
+        android:text="Login"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/finish_button"
         android:text="Finish"/>
+
+
 
 </LinearLayout>

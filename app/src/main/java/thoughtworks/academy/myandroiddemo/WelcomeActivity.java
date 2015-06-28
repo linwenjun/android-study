@@ -1,6 +1,7 @@
 package thoughtworks.academy.myandroiddemo;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -13,6 +14,7 @@ public class WelcomeActivity extends Activity {
 
     Button toastButton = null;
     Button finishButton = null;
+    Button loginButton = null;
     int count = 0;
 
     @Override
@@ -22,11 +24,20 @@ public class WelcomeActivity extends Activity {
 
         toastButton = (Button) findViewById(R.id.button);
         finishButton = (Button) findViewById(R.id.finish_button);
+        loginButton = (Button) findViewById(R.id.login_button);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "You Click The Button " + (count++) + " Times", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        loginButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
             }
         });
 
