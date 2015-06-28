@@ -42,11 +42,16 @@ public class WelcomeActivity extends Activity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (id) {
+            case R.id.action_settings:
+                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.action_login:
+                Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();
+                break;
+            default:
         }
 
-        return super.onOptionsItemSelected(item);
+        return true;
     }
 }
