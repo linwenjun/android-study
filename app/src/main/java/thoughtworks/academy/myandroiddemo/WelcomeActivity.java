@@ -12,6 +12,7 @@ import android.widget.Toast;
 public class WelcomeActivity extends Activity {
 
     Button toastButton = null;
+    Button finishButton = null;
     int count = 0;
 
     @Override
@@ -20,10 +21,19 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
 
         toastButton = (Button) findViewById(R.id.button);
+        finishButton = (Button) findViewById(R.id.finish_button);
+
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "You Click The Button " + (count++) + " Times", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        finishButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
     }
