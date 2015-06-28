@@ -2,6 +2,7 @@ package thoughtworks.academy.myandroiddemo;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ public class WelcomeActivity extends Activity {
     Button finishButton = null;
     Button loginButton = null;
     Button signInButton = null;
+    Button openBaiduButton = null;
     int count = 0;
 
     @Override
@@ -27,6 +29,7 @@ public class WelcomeActivity extends Activity {
         finishButton = (Button) findViewById(R.id.finish_button);
         loginButton = (Button) findViewById(R.id.login_button);
         signInButton = (Button) findViewById(R.id.sign_in_button);
+        openBaiduButton = (Button) findViewById(R.id.open_baidu_button);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -55,6 +58,15 @@ public class WelcomeActivity extends Activity {
             @Override
             public void onClick(View view) {
                 finish();
+            }
+        });
+
+        openBaiduButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent);
             }
         });
     }
