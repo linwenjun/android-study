@@ -15,6 +15,7 @@ public class WelcomeActivity extends Activity {
     Button toastButton = null;
     Button finishButton = null;
     Button loginButton = null;
+    Button signInButton = null;
     int count = 0;
 
     @Override
@@ -25,6 +26,7 @@ public class WelcomeActivity extends Activity {
         toastButton = (Button) findViewById(R.id.button);
         finishButton = (Button) findViewById(R.id.finish_button);
         loginButton = (Button) findViewById(R.id.login_button);
+        signInButton = (Button) findViewById(R.id.sign_in_button);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,6 +39,14 @@ public class WelcomeActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        signInButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent("android.intent.action.SIGN_IN");
                 startActivity(intent);
             }
         });

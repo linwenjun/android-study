@@ -12,4 +12,6 @@
     <string name="title_activity_for_async_task">ForAsyncTaskActivity</string>
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_sign_in">SignInActivity</string>
+    <string name="sign_in_title">注册页面</string>
 </resources>
