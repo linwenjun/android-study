@@ -9,6 +9,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 
@@ -21,6 +22,9 @@ public class WelcomeActivity extends Activity {
     Button dialButton = null;
     Button sendDataButton = null;
     EditText sendDataText = null;
+
+    Button receiveDataButton = null;
+    TextView receiveDataText = null;
 
     int count = 0;
 
@@ -36,6 +40,8 @@ public class WelcomeActivity extends Activity {
         dialButton = (Button) findViewById(R.id.dial_button);
         sendDataButton = (Button) findViewById(R.id.send_data_button);
         sendDataText = (EditText) findViewById(R.id.send_data_text);
+        receiveDataButton = (Button) findViewById(R.id.receive_data_button);
+        receiveDataText = (TextView) findViewById(R.id.receive_data_text);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -86,6 +92,14 @@ public class WelcomeActivity extends Activity {
                 startActivity(intent);
             }
         });
+
+        receiveDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), ReturnResultActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
     }
 
     @Override
@@ -113,5 +127,15 @@ public class WelcomeActivity extends Activity {
         }
 
         return true;
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        switch(requestCode) {
+            case 1:
+                receiveDataText.setText(data.getStringExtra("value"));
+                break;
+            default:
+        }
     }
 }

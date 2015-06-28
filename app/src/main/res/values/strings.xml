@@ -17,4 +17,5 @@
     <string name="action_quit">Quit</string>
     <string name="title_activity_receive_data">ReceiveDataActivity</string>
     <string name="receive_data_title">接受传来的参数</string>
+    <string name="title_activity_return_result">Return Result Activity</string>
 </resources>

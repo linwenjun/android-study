@@ -38,6 +38,7 @@
             android:label="@string/title_activity_welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -50,12 +51,17 @@
             android:label="@string/title_activity_sign_in" >
             <intent-filter>
                 <action android:name="android.intent.action.SIGN_IN" />
+
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
             android:name=".ReceiveDataActivity"
             android:label="@string/title_activity_receive_data" >
+        </activity>
+        <activity
+            android:name=".ReturnResultActivity"
+            android:label="@string/title_activity_return_result" >
         </activity>
     </application>
 
