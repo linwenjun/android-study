@@ -2,8 +2,6 @@
     <string name="app_name">My Android Demo</string>
 
     <string name="hello_world">用来测试AsyncTask中跑大的for循环</string>
-    <string name="welcome">欢迎来到新界面测试</string>
-    <string name="login_title">注册信息</string>
     <string name="action_settings">Settings</string>
     <string name="title_activity_second">SecondActivity</string>
     <string name="title_activity_looper">LooperActivity</string>
@@ -13,5 +11,7 @@
     <string name="title_activity_welcome">WelcomeActivity</string>
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
-    <string name="sign_in_title">注册页面</string>
+    <string name="welcome">欢迎来到新界面测试</string>
+    <string name="login_title">登录界面</string>
+    <string name="sign_in_title">注册界面</string>
 </resources>
