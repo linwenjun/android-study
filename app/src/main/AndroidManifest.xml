@@ -53,6 +53,10 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".ReceiveDataActivity"
+            android:label="@string/title_activity_receive_data" >
+        </activity>
     </application>
 
 </manifest>

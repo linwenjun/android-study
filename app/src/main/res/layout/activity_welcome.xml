@@ -36,4 +36,30 @@
         android:id="@+id/open_baidu_button"
         android:text="Open Baidu"/>
 
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/dial_button"
+        android:text="Dial"/>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <EditText
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:singleLine="true"
+            android:maxLength="10"
+            android:id="@+id/send_data_text"
+            />
+
+        <Button
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/send_data_button"
+            android:text="Send Data"/>
+    </LinearLayout>
+
 </LinearLayout>

@@ -8,6 +8,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 
@@ -17,6 +18,10 @@ public class WelcomeActivity extends Activity {
     Button loginButton = null;
     Button signInButton = null;
     Button openBaiduButton = null;
+    Button dialButton = null;
+    Button sendDataButton = null;
+    EditText sendDataText = null;
+
     int count = 0;
 
     @Override
@@ -28,6 +33,9 @@ public class WelcomeActivity extends Activity {
         loginButton = (Button) findViewById(R.id.login_button);
         signInButton = (Button) findViewById(R.id.sign_in_button);
         openBaiduButton = (Button) findViewById(R.id.open_baidu_button);
+        dialButton = (Button) findViewById(R.id.dial_button);
+        sendDataButton = (Button) findViewById(R.id.send_data_button);
+        sendDataText = (EditText) findViewById(R.id.send_data_text);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -57,6 +65,24 @@ public class WelcomeActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse("http://www.baidu.com"));
+                startActivity(intent);
+            }
+        });
+
+        dialButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(Intent.ACTION_VIEW);
+                intent.setData(Uri.parse("tel:10086"));
+                startActivity(intent);
+            }
+        });
+
+        sendDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(WelcomeActivity.this, ReceiveDataActivity.class);
+                intent.putExtra("value", sendDataText.getText().toString());
                 startActivity(intent);
             }
         });
