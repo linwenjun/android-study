@@ -14,7 +14,6 @@ import android.widget.Toast;
 public class WelcomeActivity extends Activity {
 
     Button toastButton = null;
-    Button finishButton = null;
     Button loginButton = null;
     Button signInButton = null;
     Button openBaiduButton = null;
@@ -26,7 +25,6 @@ public class WelcomeActivity extends Activity {
         setContentView(R.layout.activity_welcome);
 
         toastButton = (Button) findViewById(R.id.button);
-        finishButton = (Button) findViewById(R.id.finish_button);
         loginButton = (Button) findViewById(R.id.login_button);
         signInButton = (Button) findViewById(R.id.sign_in_button);
         openBaiduButton = (Button) findViewById(R.id.open_baidu_button);
@@ -51,13 +49,6 @@ public class WelcomeActivity extends Activity {
             public void onClick(View view) {
                 Intent intent = new Intent("android.intent.action.SIGN_IN");
                 startActivity(intent);
-            }
-        });
-
-        finishButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
             }
         });
 
@@ -87,7 +78,7 @@ public class WelcomeActivity extends Activity {
 
         switch (id) {
             case R.id.action_settings:
-                Toast.makeText(this, "Setting", Toast.LENGTH_SHORT).show();
+                finish();
                 break;
             case R.id.action_login:
                 Toast.makeText(this, "Login", Toast.LENGTH_SHORT).show();

@@ -14,4 +14,5 @@
     <string name="welcome">欢迎来到新界面测试</string>
     <string name="login_title">登录界面</string>
     <string name="sign_in_title">注册界面</string>
+    <string name="action_quit">Quit</string>
 </resources>

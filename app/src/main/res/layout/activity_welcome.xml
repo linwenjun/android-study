@@ -33,12 +33,6 @@
     <Button
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/finish_button"
-        android:text="Finish"/>
-
-    <Button
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/open_baidu_button"
         android:text="Open Baidu"/>
 
