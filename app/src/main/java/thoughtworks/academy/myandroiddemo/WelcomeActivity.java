@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 public class WelcomeActivity extends Activity {
 
-    Button button = null;
+    Button toastButton = null;
     int count = 0;
 
     @Override
@@ -19,8 +19,8 @@ public class WelcomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_welcome);
 
-        button = (Button) findViewById(R.id.button);
-        button.setOnClickListener(new View.OnClickListener() {
+        toastButton = (Button) findViewById(R.id.button);
+        toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Toast.makeText(getApplicationContext(), "You Click The Button " + (count++) + " Times", Toast.LENGTH_SHORT).show();
@@ -38,7 +38,7 @@ public class WelcomeActivity extends Activity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
+        // automatically handle clicks on the Home/Up toastButton, so long
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 

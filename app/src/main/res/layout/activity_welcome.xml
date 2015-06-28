@@ -16,6 +16,12 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button"
-        android:text="Button 1"/>
+        android:text="Toast"/>
+
+    <Button
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/finish_button"
+        android:text="Finish"/>
 
 </LinearLayout>
