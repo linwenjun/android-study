@@ -15,6 +15,11 @@ import thoughtworks.academy.myandroiddemo.R;
 
 public class GirlAdapter extends ArrayAdapter<Girl> {
 
+    class ViewHolder {
+        ImageView imageView;
+        TextView textView;
+    }
+
     private int resourceId;
 
     public GirlAdapter(Context context, int textViewResourceId,
@@ -28,17 +33,22 @@ public class GirlAdapter extends ArrayAdapter<Girl> {
         Girl girl = getItem(position);
 
         View view;
+        ViewHolder viewHolder;
+
         if(convertView == null) {
             view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+            viewHolder = new ViewHolder();
+            viewHolder.imageView = (ImageView) view.findViewById(R.id.girl_image);
+            viewHolder.textView = (TextView) view.findViewById(R.id.girl_text);
+            view.setTag(viewHolder);
         } else {
             view = convertView;
+            viewHolder = (ViewHolder) view.getTag();
         }
 
-        ImageView girlImage = (ImageView) view.findViewById(R.id.girl_image);
-        TextView girlText = (TextView) view.findViewById(R.id.girl_text);
+        viewHolder.imageView.setImageResource(girl.getImageId());
+        viewHolder.textView.setText(girl.getName());
         System.out.println(girl.getName());
-        girlImage.setImageResource(girl.getImageId());
-        girlText.setText(girl.getName());
         return view;
     }
 }
