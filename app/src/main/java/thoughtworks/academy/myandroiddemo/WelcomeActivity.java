@@ -27,6 +27,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     Button receiveDataButton = null;
     TextView receiveDataText = null;
 
+    NumberAdderLayout numberAdderLayout = null;
+
     int count = 0;
 
     @Override
@@ -44,6 +46,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         receiveDataButton = (Button) findViewById(R.id.receive_data_button);
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
         layoutButton = (Button) findViewById(R.id.layout_button);
+
+        numberAdderLayout = (NumberAdderLayout) findViewById(R.id.number_adder);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override

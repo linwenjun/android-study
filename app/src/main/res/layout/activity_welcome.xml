@@ -90,4 +90,9 @@
         android:text="layout"
         android:id="@+id/layout_button"/>
 
+    <thoughtworks.academy.myandroiddemo.NumberAdderLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/number_adder"></thoughtworks.academy.myandroiddemo.NumberAdderLayout>
+
 </LinearLayout>
