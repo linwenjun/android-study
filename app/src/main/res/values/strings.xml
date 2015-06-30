@@ -12,7 +12,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="welcome">欢迎来到新界面测试</string>
-    <string name="login_title">登录界面</string>
+    <string name="listview_title">简单ListView</string>
     <string name="sign_in_title">注册界面</string>
     <string name="action_quit">Quit</string>
     <string name="title_activity_receive_data">ReceiveDataActivity</string>

@@ -24,7 +24,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/login_button"
-        android:text="Login"/>
+        android:text="Simple ListView"/>
 
     <Button
         android:layout_width="fill_parent"
@@ -54,8 +54,7 @@
             android:layout_height="wrap_content"
             android:singleLine="true"
             android:maxLength="10"
-            android:id="@+id/send_data_text"
-            />
+            android:id="@+id/send_data_text" />
 
         <Button
             android:layout_width="fill_parent"
