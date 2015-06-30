@@ -13,7 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 
-public class WelcomeActivity extends Activity {
+public class WelcomeActivity extends Activity implements View.OnClickListener {
 
     Button toastButton = null;
     Button loginButton = null;
@@ -22,6 +22,7 @@ public class WelcomeActivity extends Activity {
     Button dialButton = null;
     Button sendDataButton = null;
     EditText sendDataText = null;
+    Button layoutButton = null;
 
     Button receiveDataButton = null;
     TextView receiveDataText = null;
@@ -42,6 +43,7 @@ public class WelcomeActivity extends Activity {
         sendDataText = (EditText) findViewById(R.id.send_data_text);
         receiveDataButton = (Button) findViewById(R.id.receive_data_button);
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
+        layoutButton = (Button) findViewById(R.id.layout_button);
 
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,6 +102,14 @@ public class WelcomeActivity extends Activity {
                 startActivityForResult(intent, 1);
             }
         });
+
+        layoutButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getApplicationContext(), LayoutActivity.class);
+                startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -134,6 +144,19 @@ public class WelcomeActivity extends Activity {
         switch(requestCode) {
             case 1:
                 receiveDataText.setText(data.getStringExtra("value"));
+                break;
+            default:
+        }
+    }
+
+
+    @Override
+    public void onClick(View view) {
+        System.out.println(view);
+        switch(view.getId()) {
+            case R.id.layout_button:
+                Intent intent = new Intent(WelcomeActivity.this, LayoutActivity.class);
+                startActivity(intent);
                 break;
             default:
         }
