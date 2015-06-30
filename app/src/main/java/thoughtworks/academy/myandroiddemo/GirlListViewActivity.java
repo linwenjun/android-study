@@ -30,15 +30,15 @@ public class GirlListViewActivity extends Activity {
     }
 
     private void initData() {
-        girlList.add(new Girl("one", R.drawable.image001));
-        girlList.add(new Girl("two", R.drawable.image002));
-        girlList.add(new Girl("Three", R.drawable.image001));
-        girlList.add(new Girl("four", R.drawable.image002));
-        girlList.add(new Girl("five", R.drawable.image001));
-        girlList.add(new Girl("one", R.drawable.image001));
-        girlList.add(new Girl("two", R.drawable.image002));
-        girlList.add(new Girl("Three", R.drawable.image001));
-        girlList.add(new Girl("four", R.drawable.image002));
-        girlList.add(new Girl("five", R.drawable.image001));
+        girlList.add(new Girl("1", R.drawable.image001));
+        girlList.add(new Girl("2", R.drawable.image002));
+        girlList.add(new Girl("3", R.drawable.image001));
+        girlList.add(new Girl("4", R.drawable.image002));
+        girlList.add(new Girl("5", R.drawable.image001));
+        girlList.add(new Girl("6", R.drawable.image001));
+        girlList.add(new Girl("7", R.drawable.image002));
+        girlList.add(new Girl("8", R.drawable.image001));
+        girlList.add(new Girl("9", R.drawable.image002));
+        girlList.add(new Girl("10", R.drawable.image001));
     }
 }

@@ -26,7 +26,14 @@ public class GirlAdapter extends ArrayAdapter<Girl> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         Girl girl = getItem(position);
-        View view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+
+        View view;
+        if(convertView == null) {
+            view = LayoutInflater.from(getContext()).inflate(resourceId, null);
+        } else {
+            view = convertView;
+        }
+
         ImageView girlImage = (ImageView) view.findViewById(R.id.girl_image);
         TextView girlText = (TextView) view.findViewById(R.id.girl_text);
         System.out.println(girl.getName());
