@@ -114,6 +114,13 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
+        numberAdderLayout.setCallBack(new NumberAdderLayout.ICallback() {
+            @Override
+            public void onNumberChange(int num) {
+                Toast.makeText(getApplicationContext(), num + "", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override

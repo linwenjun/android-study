@@ -10,8 +10,13 @@ import android.widget.TextView;
 
 public class NumberAdderLayout extends LinearLayout{
 
+    interface ICallback {
+        public void onNumberChange(int num);
+    }
+
     Button addButton = null;
     TextView number = null;
+    ICallback iCallback = null;
 
     public NumberAdderLayout(Context context, AttributeSet attrs) {
         super(context, attrs);
@@ -23,14 +28,19 @@ public class NumberAdderLayout extends LinearLayout{
         addButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
-                int currentValue = Integer.parseInt(number.getText().toString());
-                System.out.println(currentValue);
+                int currentValue = getNumber();
                 number.setText((++currentValue) + "");
+
+                iCallback.onNumberChange(currentValue);
             }
         });
     }
 
-    public int getNumber() {
+    public void setCallBack(ICallback callBack) {
+        iCallback = callBack;
+    }
+
+    private int getNumber() {
         return Integer.parseInt(number.getText().toString());
     }
 }
