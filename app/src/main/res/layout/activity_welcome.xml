@@ -7,6 +7,8 @@
     android:orientation="vertical"
     tools:context="thoughtworks.academy.myandroiddemo.WelcomeActivity">
 
+    <include layout="@layout/title" />
+
     <TextView android:text="@string/welcome"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
