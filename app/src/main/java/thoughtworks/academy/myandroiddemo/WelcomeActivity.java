@@ -67,7 +67,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         signInButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent("android.intent.action.SIGN_IN");
+                Intent intent = new Intent("android.intent.action.GIRL_LIST_VIEW");
                 startActivity(intent);
             }
         });

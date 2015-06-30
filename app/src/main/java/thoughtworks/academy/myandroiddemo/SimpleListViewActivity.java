@@ -17,7 +17,7 @@ public class SimpleListViewActivity extends Activity {
         setContentView(R.layout.activity_simple_list_view);
 
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
-                SimpleListViewActivity.this, android.R.layout.simple_list_item_2, data);
+                SimpleListViewActivity.this, android.R.layout.simple_list_item_1, data);
 
         ListView listView = (ListView) findViewById(R.id.list_view);
         listView.setAdapter(adapter);

@@ -30,7 +30,7 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:id="@+id/sign_in_button"
-        android:text="Sign In"/>
+        android:text="Girl ListView"/>
 
     <Button
         android:layout_width="fill_parent"

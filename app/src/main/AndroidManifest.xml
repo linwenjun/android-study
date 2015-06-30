@@ -47,10 +47,10 @@
             android:label="@string/title_activity_login" >
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".GirlListViewActivity"
             android:label="@string/title_activity_sign_in" >
             <intent-filter>
-                <action android:name="android.intent.action.SIGN_IN" />
+                <action android:name="android.intent.action.GIRL_LIST_VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
