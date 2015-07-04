@@ -30,6 +30,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     Button layoutButton = null;
 
     Button receiveDataButton = null;
+    Button touchBallButton = null;
     TextView receiveDataText = null;
 
     NumberAdderLayout numberAdderLayout = null;
@@ -53,6 +54,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         receiveDataButton = (Button) findViewById(R.id.receive_data_button);
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
         layoutButton = (Button) findViewById(R.id.layout_button);
+        touchBallButton = (Button) findViewById(R.id.touch_ball_button);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
@@ -139,6 +141,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
+
+        touchBallButton.setOnClickListener(this);
     }
 
     @Override
@@ -183,8 +187,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     public void onClick(View view) {
         System.out.println(view);
         switch(view.getId()) {
-            case R.id.layout_button:
-                Intent intent = new Intent(WelcomeActivity.this, LayoutActivity.class);
+            case R.id.touch_ball_button:
+                Intent intent = new Intent(WelcomeActivity.this, TouchBallActivity.class);
                 startActivity(intent);
                 break;
             default:

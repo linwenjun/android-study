@@ -19,4 +19,6 @@
     <string name="receive_data_title">接受传来的参数</string>
     <string name="title_activity_return_result">Return Result Activity</string>
     <string name="title_activity_layout">LayoutActivity</string>
+    <string name="title_activity_touch_ball">TouchBallActivity</string>
+    <string name="follow_ball">跟随手指的小球</string>
 </resources>
