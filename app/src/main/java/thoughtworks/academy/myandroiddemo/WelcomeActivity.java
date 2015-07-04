@@ -17,6 +17,8 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import thoughtworks.academy.myandroiddemo.ListViewAdapter.NetworkImageActivity;
+
 
 public class WelcomeActivity extends Activity implements View.OnClickListener {
 
@@ -56,7 +58,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
         layoutButton = (Button) findViewById(R.id.layout_button);
         touchBallButton = (Button) findViewById(R.id.touch_ball_button);
-        networkImageButton = (Button) findViewById(R.id.network_image);
+        networkImageButton = (Button) findViewById(R.id.network_image_button);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
@@ -196,8 +198,9 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
                 intent = new Intent(WelcomeActivity.this, TouchBallActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.network_image:
+            case R.id.network_image_button:
                 intent = new Intent(WelcomeActivity.this, NetworkImageActivity.class);
+                startActivity(intent);
             default:
         }
     }
