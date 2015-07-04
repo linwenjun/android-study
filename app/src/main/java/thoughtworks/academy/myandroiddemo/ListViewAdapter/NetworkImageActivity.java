@@ -32,17 +32,31 @@ public class NetworkImageActivity extends Activity {
             @Override
             public void handleMessage(Message msg) {
                 Bitmap bm = (Bitmap) msg.obj;
-                Log.i("height", bm.getHeight() + "");
-                Log.i("width", bm.getWidth() + "");
+                Double bitmapRatio = 1.0 * bm.getWidth() / bm.getHeight();
+                Double imageViewRatio = 1.0 * image.getWidth() / image.getHeight();
+                Log.i("Bitmap Ratio", bm.getWidth() + "");
+                Log.i("ImageView Height", bm.getHeight() + "");
+                int startX = 0;
+                int startY = 0;
+                int width = bm.getWidth();
+                int height = bm.getHeight();
 
-                image.setImageBitmap(bm);
+                if(bitmapRatio > imageViewRatio) {
+                    startX = (int) ((bm.getWidth() - bm.getHeight() * imageViewRatio) / 2);
+                    width = width - startX * 2;
+                } else {
+                    startY = (int) ((bm.getHeight() - bm.getWidth() / imageViewRatio) / 2);
+                    height = height - startY * 2;
+                }
+
+                image.setImageBitmap(Bitmap.createBitmap(bm, startX, startY, width , height));
             }
         };
 
         new Thread() {
             @Override
             public void run() {
-                Bitmap bm = getBitMapFromUrl("http://npic7.edushi.com/cn/zixun/zh-chs/2015-07/03/2015070312022028.jpg");
+                Bitmap bm = getBitMapFromUrl("http://img2.iqilu.com/ed/10/11/05/93/49_101105123647_1.jpg");
                 Message message = new Message();
                 message.obj = bm;
                 handler.sendMessage(message);
