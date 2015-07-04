@@ -72,6 +72,10 @@
             android:name=".TouchBallActivity"
             android:label="@string/title_activity_touch_ball" >
         </activity>
+        <activity
+            android:name=".ListViewAdapter.NetworkImageActivity"
+            android:label="@string/title_activity_network_image" >
+        </activity>
     </application>
 
 </manifest>

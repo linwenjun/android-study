@@ -21,4 +21,6 @@
     <string name="title_activity_layout">LayoutActivity</string>
     <string name="title_activity_touch_ball">TouchBallActivity</string>
     <string name="follow_ball">跟随手指的小球</string>
+    <string name="title_activity_network_image">NetworkImageActivity</string>
+    <string name="network_image_title">从网络上加载一个图片</string>
 </resources>

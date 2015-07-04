@@ -28,9 +28,10 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     Button sendDataButton = null;
     EditText sendDataText = null;
     Button layoutButton = null;
-
     Button receiveDataButton = null;
     Button touchBallButton = null;
+    Button networkImageButton = null;
+
     TextView receiveDataText = null;
 
     NumberAdderLayout numberAdderLayout = null;
@@ -55,6 +56,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
         layoutButton = (Button) findViewById(R.id.layout_button);
         touchBallButton = (Button) findViewById(R.id.touch_ball_button);
+        networkImageButton = (Button) findViewById(R.id.network_image);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
@@ -143,6 +145,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         });
 
         touchBallButton.setOnClickListener(this);
+        networkImageButton.setOnClickListener(this);
     }
 
     @Override
@@ -174,7 +177,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        switch(requestCode) {
+        switch (requestCode) {
             case 1:
                 receiveDataText.setText(data.getStringExtra("value"));
                 break;
@@ -186,11 +189,15 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         System.out.println(view);
-        switch(view.getId()) {
+
+        Intent intent;
+        switch (view.getId()) {
             case R.id.touch_ball_button:
-                Intent intent = new Intent(WelcomeActivity.this, TouchBallActivity.class);
+                intent = new Intent(WelcomeActivity.this, TouchBallActivity.class);
                 startActivity(intent);
                 break;
+            case R.id.network_image:
+                intent = new Intent(WelcomeActivity.this, NetworkImageActivity.class);
             default:
         }
     }
