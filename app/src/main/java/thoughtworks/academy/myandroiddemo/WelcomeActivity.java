@@ -1,7 +1,12 @@
 package thoughtworks.academy.myandroiddemo;
 
 import android.app.Activity;
+import android.content.BroadcastReceiver;
+import android.content.Context;
 import android.content.Intent;
+import android.content.IntentFilter;
+import android.net.ConnectivityManager;
+import android.net.NetworkInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
@@ -29,6 +34,8 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
     NumberAdderLayout numberAdderLayout = null;
 
+    NetWorkChangeReceiver netWorkChangeReceiver = null;
+
     int count = 0;
 
     @Override
@@ -47,8 +54,26 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         receiveDataText = (TextView) findViewById(R.id.receive_data_text);
         layoutButton = (Button) findViewById(R.id.layout_button);
 
-        numberAdderLayout = (NumberAdderLayout) findViewById(R.id.number_adder);
+        IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
+        netWorkChangeReceiver = new NetWorkChangeReceiver();
+        registerReceiver(netWorkChangeReceiver, intentFilter);
 
+        registClickEvent();
+        registCustomCallBack();
+    }
+
+    private void registCustomCallBack() {
+        numberAdderLayout = (NumberAdderLayout) findViewById(R.id.number_adder);
+        numberAdderLayout.setCallBack(new NumberAdderLayout.ICallback() {
+            @Override
+            public void onNumberChange(int num) {
+                Toast.makeText(getApplicationContext(), num + "", Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+
+    private void registClickEvent() {
         toastButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -114,13 +139,6 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
             }
         });
-
-        numberAdderLayout.setCallBack(new NumberAdderLayout.ICallback() {
-            @Override
-            public void onNumberChange(int num) {
-                Toast.makeText(getApplicationContext(), num + "", Toast.LENGTH_LONG).show();
-            }
-        });
     }
 
     @Override
@@ -170,6 +188,24 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
                 startActivity(intent);
                 break;
             default:
+        }
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        unregisterReceiver(netWorkChangeReceiver);
+    }
+
+    class NetWorkChangeReceiver extends BroadcastReceiver {
+
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            ConnectivityManager connectivityManager = (ConnectivityManager)
+                    getSystemService(Context.CONNECTIVITY_SERVICE);
+            NetworkInfo networkInfo = connectivityManager.getActiveNetworkInfo();
+
+            Toast.makeText(getApplicationContext(), "网络情况有变哦", Toast.LENGTH_SHORT).show();
         }
     }
 }

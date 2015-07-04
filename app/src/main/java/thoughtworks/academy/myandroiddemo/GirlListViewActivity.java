@@ -2,7 +2,10 @@ package thoughtworks.academy.myandroiddemo;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -27,6 +30,13 @@ public class GirlListViewActivity extends Activity {
 
         ListView listView = (ListView) findViewById(R.id.girl_list_view);
         listView.setAdapter(girlAdapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                Girl girl = girlList.get(i);
+                Toast.makeText(getApplicationContext(), girl.getName(), Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
     private void initData() {
