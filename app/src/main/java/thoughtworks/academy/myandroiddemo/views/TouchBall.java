@@ -8,9 +8,6 @@ import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
 
-/**
- * Created by wjlin on 7/4/15.
- */
 public class TouchBall extends View {
 
     private float currentX = 40;
