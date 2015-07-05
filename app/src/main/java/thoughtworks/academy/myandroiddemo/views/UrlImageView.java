@@ -36,6 +36,9 @@ public class UrlImageView extends ImageView {
             @Override
             public void handleMessage(Message msg) {
                 Bitmap bm = (Bitmap) msg.obj;
+                if(null == bm) {
+                    return;
+                }
                 Double bitmapRatio = 1.0 * bm.getWidth() / bm.getHeight();
                 Double imageViewRatio = 1.0 * imageView.getWidth() / imageView.getHeight();
                 int startX = 0;
