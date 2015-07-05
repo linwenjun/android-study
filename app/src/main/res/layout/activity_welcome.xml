@@ -120,6 +120,13 @@
             android:layout_height="wrap_content"
             android:text="Load Image From Network" />
 
+        <Button
+            android:id="@+id/stack_view_button"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:text="StackView" />
+
+
     </LinearLayout>
 </ScrollView>
 

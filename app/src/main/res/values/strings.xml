@@ -24,4 +24,6 @@
     <string name="title_activity_network_image">NetworkImageActivity</string>
     <string name="network_image_title">从网络上加载一个图片</string>
     <string name="next">下一个</string>
+    <string name="title_activity_stack_view">StackViewActivity</string>
+    <string name="stack_view_title">Stack View Demo</string>
 </resources>

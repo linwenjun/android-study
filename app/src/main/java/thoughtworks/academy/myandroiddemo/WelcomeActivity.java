@@ -33,6 +33,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
     Button receiveDataButton = null;
     Button touchBallButton = null;
     Button networkImageButton = null;
+    Button stackViewButton = null;
 
     TextView receiveDataText = null;
 
@@ -59,6 +60,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
         layoutButton = (Button) findViewById(R.id.layout_button);
         touchBallButton = (Button) findViewById(R.id.touch_ball_button);
         networkImageButton = (Button) findViewById(R.id.network_image_button);
+        stackViewButton = (Button) findViewById(R.id.stack_view_button);
 
         IntentFilter intentFilter = new IntentFilter();
         intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
@@ -148,6 +150,7 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
 
         touchBallButton.setOnClickListener(this);
         networkImageButton.setOnClickListener(this);
+        stackViewButton.setOnClickListener(this);
     }
 
     @Override
@@ -201,6 +204,11 @@ public class WelcomeActivity extends Activity implements View.OnClickListener {
             case R.id.network_image_button:
                 intent = new Intent(WelcomeActivity.this, NetworkImageActivity.class);
                 startActivity(intent);
+                break;
+            case R.id.stack_view_button:
+                intent = new Intent(WelcomeActivity.this, StackViewActivity.class);
+                startActivity(intent);
+                break;
             default:
         }
     }

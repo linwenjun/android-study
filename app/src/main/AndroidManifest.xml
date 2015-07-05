@@ -76,6 +76,10 @@
             android:name=".ListViewAdapter.NetworkImageActivity"
             android:label="@string/title_activity_network_image" >
         </activity>
+        <activity
+            android:name=".StackViewActivity"
+            android:label="@string/title_activity_stack_view" >
+        </activity>
     </application>
 
 </manifest>
